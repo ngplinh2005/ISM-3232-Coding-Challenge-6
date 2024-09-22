@@ -49,3 +49,15 @@ function calculateTotalHours(employeeName) {
 
     return employee.shifts.reduce((total, shift) => total + shift.hours, 0)
 }
+
+// Task 5: Create a Function to List Employees with Free Days
+
+function listAvailableEmployees(day) {
+    employees.forEach(employee => {
+        const employeeHasShift = employee.shifts.find(shift => shift.day === day)
+        
+        if(!employeeHasShift) {
+            console.log(`${employeeName} hasn't been assigned a shift on ${day}.`)
+        }
+    })
+}
